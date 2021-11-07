@@ -1,6 +1,5 @@
 package com.proyectoDos.proyecto.models;
 
-
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
@@ -30,4 +29,5 @@ public class Institucion {
     public void setId_Institucion(Integer id_Institucion) {
         this.id_Institucion = id_Institucion;
     }
+
 }
