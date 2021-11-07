@@ -54,5 +54,4 @@ public class UsuarioDaoImp implements UsuarioDao {
         }
         return null;
     }
-
 }

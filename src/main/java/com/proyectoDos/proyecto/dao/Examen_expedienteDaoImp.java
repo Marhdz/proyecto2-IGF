@@ -1,6 +1,6 @@
 package com.proyectoDos.proyecto.dao;
 
-import com.proyectoDos.proyecto.models.Examen;
+import com.proyectoDos.proyecto.models.Examen_expediente;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -10,14 +10,14 @@ import java.util.List;
 
 @Repository
 @Transactional
-public class ExamenDaoImp implements ExamenDao {
+public class Examen_expedienteDaoImp implements Examen_expedienteDao{
 
     @PersistenceContext
     EntityManager entityManager;
 
     @Override
-    public List<Examen> getExamen() {
-        String query = "FROM Examen";
+    public List<Examen_expediente> getExamen_expediente() {
+        String query = "FROM Examen_expediente";
         return entityManager.createQuery(query).getResultList();
     }
 }
