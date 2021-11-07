@@ -1,6 +1,6 @@
 package com.proyectoDos.proyecto.dao;
 
-import com.proyectoDos.proyecto.models.Institucion;
+import com.proyectoDos.proyecto.models.Medicamento;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -10,15 +10,16 @@ import java.util.List;
 
 @Repository
 @Transactional
-public class InstitucionDaoImp implements InstitucionDao{
+
+public class MedicamentoDaoImp implements MedicamentoDao {
 
     @PersistenceContext
     EntityManager entityManager;
 
     @Override
     @Transactional
-    public List<Institucion> getInstitucion() {
-        String query = "FROM Institucion";
+    public List<Medicamento> getMedicamentos() {
+        String query = "FROM Medicamento";
         return entityManager.createQuery(query).getResultList();
     }
 }
