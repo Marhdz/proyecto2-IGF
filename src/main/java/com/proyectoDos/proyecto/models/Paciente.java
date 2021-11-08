@@ -72,7 +72,7 @@ public class Paciente {
     private String parentesco;
 
     @Getter @Setter  @Column(name = "id_expediente")
-    private String id_expediente;
+    private Integer id_expediente;
 
     @Getter @Setter  @Column(name = "activo")
     private Boolean activo;

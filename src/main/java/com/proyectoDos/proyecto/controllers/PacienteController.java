@@ -12,7 +12,7 @@ import java.util.List;
 public class PacienteController {
 
     @Autowired
-    private PacienteDao  pacienteDao;
+    private PacienteDao pacienteDao;
 
     @RequestMapping(value = "pacientes")
     public List<Paciente> getPacientes(){
