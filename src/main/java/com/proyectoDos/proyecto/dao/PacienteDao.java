@@ -10,5 +10,6 @@ import java.util.List;
 @Transactional
 public interface PacienteDao {
 
+
     List<Paciente> getPacientes();
 }
