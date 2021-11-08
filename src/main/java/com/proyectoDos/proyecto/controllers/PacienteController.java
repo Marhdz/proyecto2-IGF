@@ -14,9 +14,8 @@ public class PacienteController {
     @Autowired
     private PacienteDao pacienteDao;
 
-    @RequestMapping(value = "pacientes")
+    @RequestMapping(value = "paciente")
     public List<Paciente> getPacientes(){
-
         return pacienteDao.getPacientes();
     }
 }
