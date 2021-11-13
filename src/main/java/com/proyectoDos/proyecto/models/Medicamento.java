@@ -5,10 +5,7 @@ import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.sql.Timestamp;
 
 @Entity
@@ -18,7 +15,7 @@ import java.sql.Timestamp;
 public class Medicamento {
     @Id
     @Column(name = "id_medicamento", nullable = false)
-
+    @GeneratedValue(strategy=GenerationType.IDENTITY)
     @Getter @Setter
     private Integer id_medicamento;
 

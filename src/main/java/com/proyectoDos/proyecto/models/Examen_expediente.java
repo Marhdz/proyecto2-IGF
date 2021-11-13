@@ -16,6 +16,7 @@ public class Examen_expediente {
 
     @Id
     @Column(name = "id_examen_expediente", nullable = false)
+    @GeneratedValue(strategy=GenerationType.IDENTITY)
     @Getter @Setter
     private Integer id_examen_expediente;
 

@@ -12,4 +12,6 @@ public interface PacienteDao {
 
 
     List<Paciente> getPacientes();
+
+    void registrar(Paciente paciente);
 }
