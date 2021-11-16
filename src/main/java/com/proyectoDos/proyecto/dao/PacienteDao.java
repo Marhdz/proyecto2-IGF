@@ -13,5 +13,7 @@ public interface PacienteDao {
 
     List<Paciente> getPacientes();
 
+    Paciente getPaciente(Integer id_paciente);
+
     void registrar(Paciente paciente);
 }

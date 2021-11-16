@@ -1,5 +1,6 @@
 package com.proyectoDos.proyecto.dao;
 
+import com.proyectoDos.proyecto.models.Expediente;
 import com.proyectoDos.proyecto.models.Paciente;
 import com.proyectoDos.proyecto.models.Usuario;
 import org.springframework.stereotype.Repository;
@@ -21,6 +22,12 @@ public class PacienteDaoImp implements PacienteDao{
     public List<Paciente> getPacientes() {
         String query = "FROM Paciente";
         return entityManager.createQuery(query).getResultList();
+    }
+
+    @Override
+    public Paciente getPaciente(Integer id_paciente) {
+        return entityManager.find(Paciente.class, id_paciente);
+
     }
 
     @Override

@@ -7,7 +7,7 @@ $(document).ready(function() {
 async function registrarPaciente() {
   let datos = {};
 
-   //obtener true o false de txtSexo
+   //obtener true o false del radio button
      let s = true;
      if(document.querySelector('input[name="rBtnSexo"]:checked').value == "0"){
        s=false;
@@ -40,9 +40,12 @@ async function registrarPaciente() {
   });
   console.log(datos);
   alert("El paciente fue agregado con exito");
+  //Pantalla a la que lleva despues de crear el paciente
   window.location.href = 'Paciente.html'
 
 }
+
+//no hace nada, era solo para probar
 async function registrarUsuario(){
 alert(document.querySelector('input[name="rBtnSexo"]:checked').value.toInt());
 console.log(document.querySelector('input[name="rBtnSexo"]:checked').value.toInt());

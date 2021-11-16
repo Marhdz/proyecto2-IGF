@@ -21,6 +21,11 @@ public class Paciente {
     @Getter @Setter
     private Integer id_paciente;
 
+//    @OneToOne(mappedBy = "paciente", cascade = CascadeType.ALL)
+//    @PrimaryKeyJoinColumn
+//    @Getter @Setter
+//    private Expediente expediente;
+
     @Getter @Setter  @Column(name = "nombre_paciente")
     private String nombre_paciente;
 

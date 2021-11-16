@@ -16,9 +16,12 @@ public class Expediente {
 
     @Id
     @Column(name = "id_expediente", nullable = false)
-    @GeneratedValue(strategy=GenerationType.IDENTITY)
     @Getter @Setter
     private Integer id_expediente;
+
+
+    @Getter @Setter
+    private Integer id_paciente;
 
     @Getter @Setter @Column(name ="alimentacion")
     private Boolean alimentacion;
@@ -81,4 +84,5 @@ public class Expediente {
     public void setId_expediente(Integer id_expediente) {
         this.id_expediente = id_expediente;
     }
+
 }
