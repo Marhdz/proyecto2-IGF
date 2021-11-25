@@ -47,5 +47,4 @@ public class UsuarioController {
         if (!validarToken(token)) { return; }
        usuarioDao.eliminar(id);
     }
-
 }

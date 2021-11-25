@@ -16,10 +16,15 @@ import java.sql.Timestamp;
 public class Paciente {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_paciente", nullable = false)
     @Getter @Setter
     private Integer id_paciente;
+
+//    @OneToOne(mappedBy = "paciente", cascade = CascadeType.ALL)
+//    @PrimaryKeyJoinColumn
+//    @Getter @Setter
+//    private Expediente expediente;
 
     @Getter @Setter  @Column(name = "nombre_paciente")
     private String nombre_paciente;
@@ -72,8 +77,8 @@ public class Paciente {
     @Getter @Setter  @Column(name = "parentesco")
     private String parentesco;
 
-    @Getter @Setter  @Column(name = "id_expediente")
-    private String id_expediente;
+//    @Getter @Setter  @Column(name = "id_expediente")
+//    private Integer id_expediente;
 
     @Getter @Setter  @Column(name = "activo")
     private Boolean activo;
