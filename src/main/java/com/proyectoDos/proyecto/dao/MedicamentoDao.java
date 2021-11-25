@@ -1,19 +1,13 @@
 package com.proyectoDos.proyecto.dao;
 
-import com.proyectoDos.proyecto.models.Paciente;
+import com.proyectoDos.proyecto.models.Medicamento;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
-
 @Repository
 @Transactional
-public interface PacienteDao {
 
-
-    List<Paciente> getPacientes();
-
-    Paciente getPaciente(Integer id_paciente);
-
-    void registrar(Paciente paciente);
+public interface MedicamentoDao {
+    List<Medicamento> getMedicamentos();
 }

@@ -20,7 +20,7 @@ async function cargarPacientes() {
                        + paciente.direccion+'</td><td>'+ paciente.id_municipio+'</td><td>'+ paciente.id_departamento+'</td><td>'
                        + paciente.clinica_referido+'</td><td>'+ paciente.telefono+'</td><td>'+ paciente.dui+'</td><td>'
                        + paciente.isss+'</td><td>'+ paciente.responsable+'</td><td>'+ paciente.parentesco+'</td><td>'
-                       + paciente.id_expediente+'</td><td>'+paciente.activo+'</td></tr>';
+                       +paciente.activo+'</td></tr>';
        listadoHtml += pacienteHtml;
      }
      document.querySelector('#pacientes tbody').outerHTML = listadoHtml;

@@ -5,10 +5,7 @@ import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
 @Table(name = "departamento")
@@ -18,6 +15,7 @@ public class Departamento {
 
     @Id
     @Column(name = "id_departamento", nullable = false)
+    @GeneratedValue(strategy=GenerationType.IDENTITY)
     @Getter @Setter
     private Integer id_departamento;
 

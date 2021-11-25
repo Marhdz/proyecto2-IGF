@@ -5,10 +5,7 @@ import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
 @Table(name = "consulta_control")
@@ -17,6 +14,7 @@ import javax.persistence.Table;
 public class ConsultaControl {
     @Id
     @Column(name = "id_consulta", nullable = false)
+    @GeneratedValue(strategy=GenerationType.IDENTITY)
     private Integer id_consulta;
 
     @Getter

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/html">
 
 <head>
 
@@ -67,92 +67,56 @@
 </nav>
 <!-- FINAL DE MI BARRA DE NAVEGACION-->
 
-<!-- INICIO DE LA ENVOLTURA DE LA PAGINA -->
-<div id="wrapper">
 
-    <!-- INICIO DE LA ENVOLTURA DEL CONTENIDO -->
-    <div id="content-wrapper" class="d-flex flex-column">
+<div class="row contacto justify-content-center">
+    <div class="col-12 col-lg-8">
+        <h2 class="titulo">Medicamento: Lamivudina</h2><br><br>
+            <div class="form-group row">
+                <div class="col-12 col-md-6">
+                    <h5>Año actual: <br>yyyy</h5><br>
+                    <h5>Periodo actual desde: <br>dd/mm/yy hasta dd/mm/yy</h5><br>
+                    <h5>Periodo anterior desde: <br>dd/mm/yy hasta dd/mm/yy</h5><br>
+                    <h5>Cantidad adquirida periodo anterior: <br>0 paquetes de 0 mg</h5><br>
+                    <h5>Existencias periodo anterior: <br>0 paquetes de 0 mg</h5><br>
+                    <h5>Cantidad adquirida periodo actual: <br>0 paquetes de 0 mg</h5><br>
+                    <h5>Total de inventario a inicio del periodo actual: <br>0 paquetes de 0 mg</h5><br>
+                    <h5>Medicamento retirado: <br>0 paquetes de 0 mg</h5><br>
+                    <h5>Total inventario actual: <br>0 paquetes de 0 mg</h5><br>
 
-        <!-- INCIO DEL CONTENEDOR PRINCIPAL-->
-        <div id="content">
-
-            <!-- INICIO DEL CONTENIDO DE LA PAGINA-->
-            <div class="container-fluid">
-                <!-- ENCABEZADO DE LA PAGINA -->
-                <h1 class="h3 mb-2 text-gray-800">Pacientes</h1>
-
-                <!-- INICIO DE LA TABLA -->
-                <div class="card shadow mb-4">
-                    <div class="card-header py-3">
-                        <h6 class="m-0 font-weight-bold text-primary">Listado de Pacientes</h6>
-                    </div>
-                    <div class="card-body">
-                        <div class="table-responsive">
-                            <table class="table table-bordered table-striped" id="pacientes" width="100%"
-                                   cellspacing="0">
-                                <thead>
-                                <tr>
-                                    <th>ID</th>
-                                    <th>Nombre Completo</th>
-                                    <th>Fecha de Nacimiento</th>
-                                    <th>lugar de Nacimiento</th>
-                                    <th>Sexo</th>
-                                    <th>Estado Civil</th>
-                                    <th>Escolaridad</th>
-                                    <th>Ocupacion</th>
-                                    <th>Direccion</th>
-                                    <th>Municipio</th>
-                                    <th>Departamento</th>
-                                    <th>Clinica Referida</th>
-                                    <th>Telefono</th>
-                                    <th>DUI</th>
-                                    <th>ISSS</th>
-                                    <th>Responsable</th>
-                                    <th>Parentesco</th>
-<!--                                    <th>ID Expediente</th>-->
-                                    <th>Activo</th>
-                                </tr>
-                                </thead>
-                                <tbody>
-
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
                 </div>
-                <!-- FINAL DE LA TABLA -->
 
-            </div>
-            <!-- FINAL DEL CONTENIDO DE LA PAGINA-->
+                <div class="col-12 col-md-6">
+                    <div align="center"><img class = "imagen" src="images\Lamivudina.jpg" alt="Medicamento" width="300" height="200"></div><br><br>
+                    <h5>Cantidad a solicitar para el siguiente periodo:</h5><br>
+                    <h6>*De acuerdo a lo utilizado en el periodo anterior (0 pkg 0 mg)</h6><br>
 
-            <!-- BOTON AGREGAR PACIENTE-->
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-8">
-
+                    <div><section><input type="number" class="form-control" id="nbcantidad" value="0" min="0" style="width : 100px; heigth : 100px">
+                        <h6>paquetes de mg</h6></section>
                     </div>
-                    <div class="col-md-4">
-                        <button type="button" class="btn btn-primary" href="Registrar.html">Guardar</button>
-                    </div>
-                </div>
-            </div>
-
-
-        </div>
-        <!-- FINAL DEL CONTENEDOR PRINCIPAL-->
-
-        <!-- INICIO DEL FOOTER -->
-        <footer class="sticky-footer bg-white">
-            <div class="container my-auto">
-                <div class="copyright text-center my-auto">
-                    <span>Copyright &copy; Your Website 2021</span>
-                </div>
-            </div>
-        </footer>
-        <!-- FINAL DEL FOOTER -->
+                    <div><section><input type="number" class="form-control" id="nbcantidad2" value="0" min="0" style="width : 100px; heigth : 100px">
+                    </section></div><br>
+                    <a onclick="Solicitar()" href="#" class="btn btn-primary btn-user btn-block">
+                        Solicitar
+                        <br></a>
+                    <a onclick="Descartar()" href="#" class="btn btn-primary btn-user btn-block">
+                        Descartar
+                    </a>
 
     </div>
-    <!-- FINAL DE LA ENVOLTURA DEL CONTENIDO -->
+</div>
+
+
+<!-- INICIO DEL FOOTER -->
+<footer class="sticky-footer bg-white">
+    <div class="container my-auto">
+        <div class="copyright text-center my-auto">
+            <span>Copyright &copy; Your Website 2021</span>
+        </div>
+    </div>
+</footer>
+<!-- FINAL DEL FOOTER -->
+
+
 
 </div>
 <!-- FINAL DE LA ENVOLTURA DE LA PAGINA -->
@@ -184,7 +148,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=ABeeZee:ital@0;1&family=Abel&display=swap" rel="stylesheet">
 
-</body>
+</div></body>
 <!-- FINAL DEL BODY-->
 
 </html>
