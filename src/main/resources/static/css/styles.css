@@ -15,6 +15,7 @@
 .nav-link:hover {
     color: #618184;
 }
+
 .nav-link:focus{
     color: #618184;
 }
@@ -41,6 +42,7 @@
 .navbar-brand:hover {
     color: #618184;
 }
+
 #s1{
     width: inherit;
     padding: 40px 0;
@@ -100,6 +102,16 @@
     background: #DDF8FA;
     border-radius: 15px;
     border-style: none;
+
+}
+p {
+    text-align: right;
+  }
+
+  .imagen{
+    margin-left: auto;
+    margin-right: 150px;
+  }
     width: 192px;
     height: 45px;
     margin-top: 15px;
