@@ -1,12 +1,15 @@
 package com.proyectoDos.proyecto.dao;
 
 import com.proyectoDos.proyecto.models.Pedido;
+import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import java.util.List;
 
+@Repository
+@Transactional
 public class PedidoDaoImp implements PedidoDao{
     @PersistenceContext
     EntityManager entityManager;

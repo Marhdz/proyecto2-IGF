@@ -15,6 +15,14 @@ import javax.persistence.*;
 @EqualsAndHashCode
 public class Pedido {
 
+    public Integer getId_pedido() {
+        return id_pedido;
+    }
+
+    public void setId_pedido(Integer id_pedido) {
+        this.id_pedido = id_pedido;
+    }
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_paciente", nullable = false)
