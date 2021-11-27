@@ -6,7 +6,10 @@ import java.util.List;
 
 public interface ConsultaControlDao {
 
-    List<ConsultaControl> getConsultaControl();
+    List<ConsultaControl> getConsultasControl();
 
+    ConsultaControl getConsultaControl(Integer id_C);
+
+    void createConsultaControl(ConsultaControl consultaControl);
 }
 

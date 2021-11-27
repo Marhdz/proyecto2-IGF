@@ -22,4 +22,14 @@ public class MedicamentoDaoImp implements MedicamentoDao {
         String query = "FROM Medicamento";
         return entityManager.createQuery(query).getResultList();
     }
+
+    @Override
+    public Medicamento getMedicamento(Integer id) {
+        return entityManager.find(Medicamento.class, id);
+    }
+
+    @Override
+    public void postMedicamento(Medicamento medicamento) {
+        entityManager.merge(medicamento);
+    }
 }

@@ -16,8 +16,13 @@ public class MunicipioDaoImp implements MunicipioDao{
     EntityManager entityManager;
 
     @Override
-    public List<Municipio> getMunicipio() {
+    public List<Municipio> getMunicipios() {
         String query = "FROM Municipio";
         return entityManager.createQuery(query).getResultList();
+    }
+
+    @Override
+    public Municipio getMunicipio(Integer id) {
+        return entityManager.find(Municipio.class, id);
     }
 }

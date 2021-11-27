@@ -10,4 +10,8 @@ import java.util.List;
 
 public interface MedicamentoDao {
     List<Medicamento> getMedicamentos();
+
+    Medicamento getMedicamento(Integer id);
+
+    void postMedicamento(Medicamento medicamento);
 }

@@ -1,2 +1,39 @@
-package com.proyectoDos.proyecto.models;public class Pedido {
+package com.proyectoDos.proyecto.models;
+
+
+import jdk.jfr.Enabled;
+import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
+
+import javax.persistence.*;
+
+@Enabled
+@Table(name = "pedido")
+@ToString
+@EqualsAndHashCode
+public class Pedido {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id_paciente", nullable = false)
+    @Getter @Setter
+    private Integer id_pedido;
+
+    @Getter @Setter @Column(name = "id_medicamento")
+    private Integer id_medicamento;
+
+    @Getter @Setter @Column(name = "periodo")
+    private Integer periodo;
+
+    @Getter @Setter @Column(name = "id_pedido_anterior")
+    private Integer id_pedido_anterior;
+
+    @Getter @Setter @Column(name = "cantidad_inicial")
+    private Integer cantidad_inicial;
+
+    @Getter @Setter @Column(name = "existencias")
+    private Integer existencias;
+
 }

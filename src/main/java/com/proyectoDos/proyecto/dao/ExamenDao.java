@@ -6,5 +6,10 @@ import java.util.List;
 
 public interface ExamenDao {
 
-    List<Examen> getExamen();
+    List<Examen> getExamenes();
+
+    Examen getExamen(Integer id);
+
+    void postExamen(Examen examen);
+
 }

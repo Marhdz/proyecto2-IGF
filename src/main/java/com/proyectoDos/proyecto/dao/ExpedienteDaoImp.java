@@ -29,7 +29,7 @@ public class ExpedienteDaoImp implements ExpedienteDao{
     }
 
     @Override
-    public void registrar(Expediente expediente) {
+    public void postExpediente(Expediente expediente) {
         entityManager.merge(expediente);
     }
 }

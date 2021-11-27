@@ -16,7 +16,17 @@ public class ExamenDaoImp implements ExamenDao {
     EntityManager entityManager;
 
     @Override
-    public List<Examen> getExamen() {
+    public Examen getExamen(Integer id) {
+        return entityManager.find(Examen.class, id);
+    }
+
+    @Override
+    public void postExamen(Examen examen) {
+        entityManager.merge(examen);
+    }
+
+    @Override
+    public List<Examen> getExamenes() {
         String query = "FROM Examen";
         return entityManager.createQuery(query).getResultList();
     }

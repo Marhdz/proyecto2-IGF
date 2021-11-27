@@ -17,8 +17,14 @@ public class DepartamentoDaoImp implements DepartamentoDao{
     EntityManager entityManager;
 
     @Override
-    public List<Departamento> getDepartamento() {
+    public List<Departamento> getDepartamentos() {
         String query = "FROM Departamento";
         return entityManager.createQuery(query).getResultList();
+    }
+
+    @Override
+    public Departamento getDepartamento(Integer id) {
+
+        return entityManager.find(Departamento.class, id);
     }
 }

@@ -16,7 +16,14 @@ import java.sql.Timestamp;
 public class Paciente {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+//    @SequenceGenerator(
+//            name = "paciente_sequence",
+//            sequenceName = "paciente_sequence",
+//            allocationSize = 1
+//    )
+    @GeneratedValue(
+            strategy = GenerationType.IDENTITY
+    )
     @Column(name = "id_paciente", nullable = false)
     @Getter @Setter
     private Integer id_paciente;

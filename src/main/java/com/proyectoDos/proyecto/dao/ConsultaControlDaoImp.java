@@ -15,10 +15,20 @@ public class ConsultaControlDaoImp implements ConsultaControlDao{
     @PersistenceContext
     EntityManager entityManager;
 
+
     @Override
-    public List<ConsultaControl> getConsultaControl() {
+    public List<ConsultaControl> getConsultasControl() {
         String query = "FROM ConsultaControl";
         return entityManager.createQuery(query).getResultList();
+    }
 
+    @Override
+    public ConsultaControl getConsultaControl(Integer id_C) {
+        return entityManager.find(ConsultaControl.class, id_C);
+    }
+
+    @Override
+    public void createConsultaControl(ConsultaControl consultaControl) {
+        entityManager.merge(consultaControl);
     }
 }

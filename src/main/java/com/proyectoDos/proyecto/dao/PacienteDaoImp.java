@@ -1,9 +1,9 @@
 package com.proyectoDos.proyecto.dao;
 
-import com.proyectoDos.proyecto.models.Expediente;
 import com.proyectoDos.proyecto.models.Paciente;
-import com.proyectoDos.proyecto.models.Usuario;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
+import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.persistence.EntityManager;
@@ -13,9 +13,9 @@ import java.util.List;
 @Repository
 @Transactional
 public class PacienteDaoImp implements PacienteDao{
-
     @PersistenceContext
     EntityManager entityManager;
+
 
     @Override
     @Transactional
@@ -25,19 +25,21 @@ public class PacienteDaoImp implements PacienteDao{
     }
 
     @Override
+    public void postPaciente(Paciente paciente) {
+        entityManager.merge(paciente);
+    }
+
+    @Override
     public Paciente getPaciente(Integer id_paciente) {
         return entityManager.find(Paciente.class, id_paciente);
 
     }
 
+
     @Override
-    public void registrar(Paciente paciente) {
+    public void deletePaciente(Integer id) {
+        Paciente paciente = entityManager.find(Paciente.class, id);
+        paciente.setActivo(false);
         entityManager.merge(paciente);
     }
-
-//    @Override
-//    public void deletePaciente(Long id) {
-//        Paciente paciente = entityManager.find(Paciente.class, id);
-//        entityManager.merge(paciente);
-//    }
 }

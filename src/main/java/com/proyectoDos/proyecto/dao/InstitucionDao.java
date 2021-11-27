@@ -10,5 +10,7 @@ import java.util.List;
 @Transactional
 public interface InstitucionDao {
 
-    List<Institucion> getInstitucion();
+    Institucion getInstitucion(Integer id);
+
+    List<Institucion> getInstituciones();
 }

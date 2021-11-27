@@ -10,25 +10,26 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
+@RequestMapping(value = "api/v1/expediente")
 public class ExpedienteController {
 
     @Autowired
     private ExpedienteDao expedienteDao;
 
-    @RequestMapping(value = "expedientes")
+    @GetMapping
     public List<Expediente> getExpediente(){
         return expedienteDao.getExpediente();
     }
 
-    @RequestMapping(value = "expediente/{id}")
+    @GetMapping(value = "{id}")
     public Expediente getExpedientes(@PathVariable("id") Integer id_expediente){
         return expedienteDao.getExpedientes(id_expediente);
     }
 
 
-    @RequestMapping(value = "expediente/{id}", method = RequestMethod.POST)
+    @PostMapping(value = "{id}")
     public void RegistrarExpediente(@PathVariable("id")  Integer id_paciente, @RequestBody Expediente expediente){
         expediente.setId_paciente(id_paciente);
-        expedienteDao.registrar(expediente);
+        expedienteDao.postExpediente(expediente);
     }
 }

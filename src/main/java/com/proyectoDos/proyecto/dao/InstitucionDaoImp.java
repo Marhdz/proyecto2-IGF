@@ -16,9 +16,15 @@ public class InstitucionDaoImp implements InstitucionDao{
     EntityManager entityManager;
 
     @Override
+    public Institucion getInstitucion(Integer id) {
+        return entityManager.find(Institucion.class, id);
+    }
+
+    @Override
     @Transactional
-    public List<Institucion> getInstitucion() {
+    public List<Institucion> getInstituciones() {
         String query = "FROM Institucion";
         return entityManager.createQuery(query).getResultList();
     }
+
 }

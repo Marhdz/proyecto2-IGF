@@ -11,5 +11,5 @@ public interface ExpedienteDao {
 
     Expediente getExpedientes(Integer id_expediente);
 
-    void registrar(Expediente expediente);
+    void postExpediente(Expediente expediente);
 }

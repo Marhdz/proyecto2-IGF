@@ -5,5 +5,7 @@ import com.proyectoDos.proyecto.models.Municipio;
 import java.util.List;
 
 public interface MunicipioDao {
-    List<Municipio> getMunicipio();
+    List<Municipio> getMunicipios();
+
+    Municipio getMunicipio(Integer id);
 }
