@@ -30,6 +30,7 @@ public class ExpedienteController {
     @PostMapping(value = "{id}")
     public void RegistrarExpediente(@PathVariable("id")  Integer id_paciente, @RequestBody Expediente expediente){
         expediente.setId_paciente(id_paciente);
+        expediente.setId_expediente(id_paciente);
         expedienteDao.postExpediente(expediente);
     }
 }
