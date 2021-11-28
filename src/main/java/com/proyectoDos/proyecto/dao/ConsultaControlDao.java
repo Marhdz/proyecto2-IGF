@@ -8,7 +8,7 @@ public interface ConsultaControlDao {
 
     List<ConsultaControl> getConsultasControl();
 
-    ConsultaControl getConsultaControl(Integer id_C);
+    ConsultaControl getConsultaControl(Integer id_consulta);
 
     void createConsultaControl(ConsultaControl consultaControl);
 }

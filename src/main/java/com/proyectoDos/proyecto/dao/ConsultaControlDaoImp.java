@@ -23,8 +23,8 @@ public class ConsultaControlDaoImp implements ConsultaControlDao{
     }
 
     @Override
-    public ConsultaControl getConsultaControl(Integer id_C) {
-        return entityManager.find(ConsultaControl.class, id_C);
+    public ConsultaControl getConsultaControl(Integer id_consulta) {
+        return entityManager.find(ConsultaControl.class, id_consulta);
     }
 
     @Override

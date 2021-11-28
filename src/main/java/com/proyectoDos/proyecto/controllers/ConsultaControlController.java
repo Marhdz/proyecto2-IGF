@@ -18,8 +18,8 @@ public class ConsultaControlController {
     public List<ConsultaControl> getConsultasControl() { return consultaControlDao.getConsultasControl(); }
 
     @GetMapping(value = "{id}")
-    public ConsultaControl getConsultaControl(@PathVariable Integer id_consulta_control) {
-        return consultaControlDao.getConsultaControl(id_consulta_control);
+    public ConsultaControl getConsultaControl(@PathVariable Integer id) {
+        return consultaControlDao.getConsultaControl(id);
     }
 
     @PostMapping

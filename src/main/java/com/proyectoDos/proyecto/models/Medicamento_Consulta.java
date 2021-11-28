@@ -20,7 +20,7 @@ public class Medicamento_Consulta {
     @Getter @Setter @Column(name = "id_medicamento")
     private Integer id_medicamento;
 
-    @Getter @Setter @Column(name = "id_consulta ")
+    @Getter @Setter @Column(name = "id_consulta")
     private Integer id_consulta;
 
     @Getter @Setter @Column(name = "cantidad")

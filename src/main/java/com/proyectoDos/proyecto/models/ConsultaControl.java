@@ -16,6 +16,7 @@ public class ConsultaControl {
     @Id
     @Column(name = "id_consulta", nullable = false)
     @GeneratedValue(strategy=GenerationType.IDENTITY)
+    @Getter @Setter
     private Integer id_consulta;
 
     @Getter
