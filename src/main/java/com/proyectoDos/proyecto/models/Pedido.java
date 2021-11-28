@@ -9,7 +9,7 @@ import lombok.ToString;
 
 import javax.persistence.*;
 
-@Enabled
+@Entity
 @Table(name = "pedido")
 @ToString
 @EqualsAndHashCode
@@ -25,7 +25,7 @@ public class Pedido {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id_paciente", nullable = false)
+    @Column(name = "id_pedido", nullable = false)
     @Getter @Setter
     private Integer id_pedido;
 

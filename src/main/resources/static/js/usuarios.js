@@ -11,7 +11,7 @@ function actualizarEmailDelUsuario() {
 
 
 async function cargarUsuarios() {
-  const request = await fetch('departamentos', {
+  const request = await fetch('api/v1/departamento', {
     method: 'GET',
     headers: getHeaders()
   });

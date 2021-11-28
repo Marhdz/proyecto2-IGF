@@ -5,7 +5,7 @@ $(document).ready(function() {
 });
 
 async function cargarPacientes() {
-    const request = await fetch('paciente', {
+    const request = await fetch('api/v1/paciente/', {
         method: 'GET',
         headers: getHeaders()
     });

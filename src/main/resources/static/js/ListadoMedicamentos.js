@@ -4,24 +4,24 @@ $(document).ready(function() {
   $('#medicamento').DataTable();
 });
 
-async function cargarListadoMedicamentos();{
-    const request = await fetch('Listado de medicamentos', {
+async function cargarListadoMedicamentos(){
+    const request = await fetch('api/v1/medicamento/', {
         method: 'GET',
         headers: getHeaders()
     });
-    const listadoMedicamentos = await request.json();
+    const medicamentos = await request.json();
 
    let listadoHtml = ' ';
      for (let medicamento of medicamentos) {
-
-       let medicamentoHtml = '<tr><td>'+medicamento.id_medicamento+'</td><td>' + medicamento.acronimo + ' ' + medicamento.nombre_medicamento + '</td><td>'
+        console.log(medicamento.vencimiento.getYear);
+       let medicamentoHtml = '<tr><td>' + medicamento.acronimo + '</td><td>'   + medicamento.nombre_medicamento + '</td><td>'
                        + medicamento.laboratorio+'</td><td>'+ medicamento.concentracion+'</td><td>'+ medicamento.presentacion+'</td><td>'
                        + medicamento.vencimiento+'</td><td>'+ medicamento.cantidad+'</td></tr>';
        listadoHtml += medicamentoHtml;
      }
-     document.querySelector('#medicamentos tbody').outerHTML = listadoHtml;
+     document.querySelector('#medicamento tbody').outerHTML = listadoHtml;
 
-     console.log(medicamentos)
+     console.log(medicamentos);
 }
 
 function getHeaders() {
