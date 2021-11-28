@@ -6,6 +6,7 @@ import lombok.Setter;
 import lombok.ToString;
 
 import javax.persistence.*;
+import java.sql.Timestamp;
 
 @Entity
 @Table(name = "consulta_control")
@@ -25,7 +26,7 @@ public class ConsultaControl {
     @Getter
     @Setter
     @Column(name = "fecha_consulta")
-    private Integer fechaConsulta;
+    private Timestamp fechaConsulta;
 
     public Integer getId_consulta() {
         return id_consulta;
