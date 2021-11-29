@@ -71,21 +71,13 @@
 <div class="row contacto justify-content-center">
     <div class="col-12 col-lg-8">
         <h2 class="titulo">Medicamento: Lamivudina</h2><br><br>
-            <div class="form-group row">
+            <div class="form-group row" id = "pedidoAnterior">
                 <div class="col-12 col-md-6">
-                    <h5>Año actual: <br>yyyy</h5><br>
-                    <h5>Periodo actual desde: <br>dd/mm/yy hasta dd/mm/yy</h5><br>
-                    <h5>Periodo anterior desde: <br>dd/mm/yy hasta dd/mm/yy</h5><br>
-                    <h5>Cantidad adquirida periodo anterior: <br>0 paquetes de 0 mg</h5><br>
-                    <h5>Existencias periodo anterior: <br>0 paquetes de 0 mg</h5><br>
-                    <h5>Cantidad adquirida periodo actual: <br>0 paquetes de 0 mg</h5><br>
-                    <h5>Total de inventario a inicio del periodo actual: <br>0 paquetes de 0 mg</h5><br>
-                    <h5>Medicamento retirado: <br>0 paquetes de 0 mg</h5><br>
-                    <h5>Total inventario actual: <br>0 paquetes de 0 mg</h5><br>
+
 
                 </div>
 
-                <div class="col-12 col-md-6">
+                <div class="col-12 col-md-6" id="guardar">
                     <div align="center"><img class = "imagen" src="images\Lamivudina.jpg" alt="Medicamento" width="300" height="200"></div><br><br>
                     <h5>Cantidad a solicitar para el siguiente periodo:</h5><br>
                     <h6>*De acuerdo a lo utilizado en el periodo anterior (0 pkg 0 mg)</h6><br>
@@ -95,7 +87,7 @@
                     </div>
                     <div><section><input type="number" class="form-control" id="nbcantidad2" value="0" min="0" style="width : 100px; heigth : 100px">
                     </section></div><br>
-                    <a onclick="Solicitar()" href="#" class="btn btn-primary btn-user btn-block">
+                    <a onclick="RegistrarPedido()" href="#" class="btn btn-primary btn-user btn-block">
                         Solicitar
                         <br></a>
                     <a onclick="Descartar()" href="#" class="btn btn-primary btn-user btn-block">
@@ -137,8 +129,10 @@
 <script src="vendor/datatables/jquery.dataTables.min.js"></script>
 <script src="vendor/datatables/dataTables.bootstrap4.min.js"></script>
 
+
 <!-- Page level custom scripts -->
-<script src="js/Paciente.js"></script>
+<!--<script src="js/RegistrarPedido.js"></script>-->
+    <script src="js/ListadoMedicamentos.js"></script>
 
 <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
 <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>

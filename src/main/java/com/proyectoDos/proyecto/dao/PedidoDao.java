@@ -14,4 +14,6 @@ public interface PedidoDao {
     Pedido getPedido(Integer id);
 
     void postPedido(Pedido pedido);
+
+    Pedido getPedidosByMed(Integer id_medicamento);
 }

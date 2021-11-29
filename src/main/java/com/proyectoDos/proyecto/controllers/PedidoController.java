@@ -5,6 +5,8 @@ import com.proyectoDos.proyecto.models.Pedido;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.sql.Date;
+import java.time.LocalDate;
 import java.util.List;
 
 @RestController
@@ -25,12 +27,29 @@ public class PedidoController {
         return  pedidoDao.getPedido(id_pedido);
     }
 
-    @PostMapping
-    public void createPedido(@RequestBody Pedido pedido){
+    @PostMapping(value = "{id}")
+    public void createPedido(@PathVariable Integer id , @RequestBody Pedido pedido){
+        Integer cantidadInicial = pedido.getCantidad_inicial();
+        if(pedidoDao.getPedidosByMed(id) != null) {
+            Pedido pedidoAnterior = pedidoDao.getPedidosByMed(id);
+            pedido.setId_pedido_anterior(pedidoAnterior.getId_pedido());
+            pedido.setExistencias(pedidoAnterior.getExistencias() + cantidadInicial);
+        } else {
+            pedido.setExistencias(cantidadInicial);
+        }
+        pedido.setId_medicamento(id);
+        pedido.setPeriodo(Date.valueOf(LocalDate.now()));
         pedidoDao.postPedido(pedido);
     }
 
-    @PostMapping(value = "{id}")
+    @GetMapping(value = "nuevo/{id}")
+    public String nuevoPedido(@PathVariable Integer id){
+        return "html/ControlDeInventario.html";
+    }
+
+
+
+    @PostMapping(value = "update/{id}")
     public void updatePedido(@PathVariable("id") Integer id_pedido, @RequestBody Pedido pedido){
         pedido.setId_pedido(id_pedido);
         pedidoDao.postPedido(pedido);

@@ -8,6 +8,7 @@ import lombok.Setter;
 import lombok.ToString;
 
 import javax.persistence.*;
+import java.sql.Date;
 
 @Entity
 @Table(name = "pedido")
@@ -33,7 +34,7 @@ public class Pedido {
     private Integer id_medicamento;
 
     @Getter @Setter @Column(name = "periodo")
-    private Integer periodo;
+    private Date periodo;
 
     @Getter @Setter @Column(name = "id_pedido_anterior")
     private Integer id_pedido_anterior;

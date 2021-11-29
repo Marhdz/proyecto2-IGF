@@ -43,7 +43,7 @@
                     <a class="nav-link" href="#" id="p4cientes">Pacientes</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#" id="medicamentos">Medicamentos</a>
+                    <a class="nav-link" href="ListadoMedicamentos.html" id="medicamentos">Medicamentos</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#" id="informes">Informes</a>
@@ -69,7 +69,12 @@
                         <p>Nombre</p>
                         <div class="form-floating mb-3">
                             <input type="text" class="form-control" id="txtnnombre" placeholder="Nombre">
-                            <label for="txtnombre">Nombre...</label>
+                            <label for="txtnnombre">Nombre...</label>
+                        </div>
+                        <p>Acrónimo</p>
+                        <div class="form-floating mb-3">
+                            <input type="text" class="form-control" id="txtacronimo" placeholder="Acronimo">
+                            <label for="txtacronimo">Acrónimo</label>
                         </div>
                         <p>Laboratorio</p>
                         <div class="form-floating mb-3">
@@ -78,19 +83,15 @@
                         </div>
                         <div class="row g-2">
                             <div class="col-sm-8">
-                                <p>Dosis</p>
+                                <p>Concentración(mg/ml)</p>
                                 <div class="form-floating mb-3">
-                                    <select class="form-select" id="lstdosis">
-                                        <option selected>Elija...</option>
-                                        <option value="1">One</option>
-                                        <option value="2">Two</option>
-                                        <option value="3">Three</option>
-                                    </select>
-                                    <label for="lstdosis">Dosis...</label>
+                                    <input type="text" class="form-control" id="txtdosis" maxlength="4"
+                                           onKeypress="if (event.keyCode < 45 || event.keyCode > 57) event.returnValue = false;">
+                                    <label for="txtdosis">Concentración</label>
                                 </div>
                             </div>
                             <div class="col-sm">
-                                <p>Cantida</p>
+                                <p>Cantidad</p>
                                 <div class="form-floating mb-3">
                                     <input type="number" class="form-control" id="nbcantidad" value="0" min="0" max="1000">
                                     <label for="nbcantidad">Cantida...</label>
@@ -103,20 +104,14 @@
                                 <div class="form-floating mb-3">
                                     <select class="form-select" id="lstpresentacion">
                                         <option selected>Elija...</option>
-                                        <option value="1">One</option>
-                                        <option value="2">Two</option>
-                                        <option value="3">Three</option>
+                                        <option value="Cápsulas">Cápsulas</option>
+                                        <option value="Comprimidos">Comprimidos</option>
+                                        <option value="Solución Oral">Solución Oral</option>
                                     </select>
-                                    <label for="lstpresentacion">Presentacion...</label>
+                                    <label for="lstpresentacion">Presentación...</label>
                                 </div>
                             </div>
-                            <div class="col-sm">
-                                <p>Imagen</p>
 
-                                <input type="file" id="actual-btn" hidden>
-                                <label for="actual-btn"><img src="images/camara.png" alt="asdfs" id="camarita"> </label>
-
-                            </div>
                         </div>
                         <div class="row g-2">
                             <div class="col-sm-8">
@@ -146,7 +141,9 @@
                                 <button type="button" class="btn btn-secundary" href="#">Descartar</button>
                             </div>
                             <div class="col-sm">
-                                <button type="button" class="btn btn-primary" href="#">Guardar</button>
+                                <a onclick="registrarMedicamento()" href="#" class="btn btn-primary btn-user btn-block">
+                                    Registrar
+                                </a>
                             </div>
 
                         </div>
@@ -205,6 +202,14 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
   -->
 
+<!-- Bootstrap core JavaScript-->
+
+
+<!-- Core plugin JavaScript-->
+<script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+<script src="js/sb-admin-2.min.js"></script>
+
+<script src="js/RegistrarMedicamento.js"></script>
 </body>
 <!-- FINAL DEL BODY-->
 

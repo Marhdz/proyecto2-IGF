@@ -1,47 +1,9 @@
 // Call the dataTables jQuery plugin
-$(document).ready(function() {
-    cargarListadoMedicamentos();
-  $('#medicamento').DataTable();
-});
-
-async function cargarListadoMedicamentos(){
-    const request = await fetch('api/v1/medicamento/', {
-        method: 'GET',
-        headers: getHeaders()
-    });
-    const medicamentos = await request.json();
-
-   let listadoHtml = ' ';
-     for (let medicamento of medicamentos) {
-
-     let botonPedido = '<a href="ControlDeInventario.html" class="btn btn-primary btn-circle btn-sm"><i onclick="cargarPedidoAnterior(' + medicamento.id_medicamento + ')" class="fas fa-trash"></i></a>';
-       let medicamentoHtml = '<tr><td>' + medicamento.acronimo + '</td><td>'   + medicamento.nombre_medicamento + '</td><td>'
-                       + medicamento.laboratorio+'</td><td>'+ medicamento.concentracion+'</td><td>'+ medicamento.presentacion+'</td><td>'
-                       + medicamento.vencimiento.substring(0, 7)+'</td><td>'+ medicamento.cantidad+'</td><td>'+ botonPedido+'</td></tr>';
-       listadoHtml += medicamentoHtml;
-
-     console.log(medicamento.id_medicamento);
-     }
-     document.querySelector('#medicamento tbody').outerHTML = listadoHtml;
-
-}
-
-function getHeaders() {
-    return {
-     'Accept': 'application/json',
-     'Content-Type': 'application/json',
-     'Authorization': localStorage.token
-   };
-}
-
-function cargarPedidoAnterior(id){
-    console.log(id);
     $(document).ready(function(id) {
-            cargarPedidoAnterior(id);
-            RegistrarPedido(id)
-            $('#pedidoAnterior')
+        cargarPedidoAnterior(id);
+        RegistrarPedido(id)
+        $('#pedidoAnterior')
     });
-}
 
 async function cargarPedidoAnterior(id){
 
@@ -81,4 +43,12 @@ async function RegistrarPedido(id){
        });
        console.log("dis "+id_pedidoAnterior);
        window.location.href = 'ListadoMedicamentos.html'
+}
+
+function getHeaders() {
+    return {
+     'Accept': 'application/json',
+     'Content-Type': 'application/json',
+     'Authorization': localStorage.token
+   };
 }
